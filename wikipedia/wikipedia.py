@@ -540,18 +540,18 @@ class WikipediaPage(object):
 
     if not getattr(self, '_images', False):
       self._images = [
-        page['images'][0]['url']
+        page['imageinfo'][0]['url']
         for page in self.__continued_query({
           'generator': 'images',
           'gimlimit': 'max',
-          # 'prop': 'imageinfo',
-          'prop': 'images',
+          'prop': 'imageinfo',
           'iiprop': 'url',
         })
         if 'imageinfo' in page
       ]
 
     return self._images
+    
 
   @property
   def coordinates(self):
