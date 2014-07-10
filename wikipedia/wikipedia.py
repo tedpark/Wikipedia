@@ -544,8 +544,7 @@ class WikipediaPage(object):
         for page in self.__continued_query({
           'generator': 'images',
           'gimlimit': 'max',
-          # 'prop': 'imageinfo',
-           'prop': 'images',
+          'prop': 'imageinfo',
           'iiprop': 'url',
         })
         if 'imageinfo' in page
